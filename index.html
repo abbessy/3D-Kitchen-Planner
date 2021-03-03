@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Dragable cube</title>
+		<title>Kitchen Planner Ama Mn Jumia </title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="/style.css">
 	</head>
@@ -11,17 +11,25 @@
 		<script  src="./OBJLoader.js"></script>
 		<script  src="./MTLLoader.js"></script>
 		<script  src="./app.js"></script>
+		<script src="./menu.js"></script>
 		
+		<div id="open-btn" onclick="openFunction()">
+			&#9776; 
+		</div>
 
-		<div class="btn-cube">
-		<button onclick="createCube()"></button>
+		<div id="menu" class="menu">
+			<button id="btn-cube"    onclick="createCube()"></button>
+			<button id="rock-btn"    onclick="createRockCube()" ><img src="./rock.jpg"></button>
+			<button id="move-btn"    onclick="disableControl()">move</button>
+			<button id="view-btn"    onclick="enableControl()"> view </button>
+			<button id="robot-btn"   onclick="createRobot()"> Robot </button>
+			<button id="robot2-btn"  onclick="createRobot2()"> Robot 2 </button>
+			<a href="#" class="close-btn" onclick="closeFunction()">&times;</a>
 		</div>
 		
-		<button onclick="createRockCube()" id="close-image"><img src="./rock.jpg"></button>
-		<button id="move-btn" onclick="disableControl()">move</button>
-		<button id="view-btn" onclick="enableControl()"> view </button>
-		<button id="robot-btn" onclick="createRobot()"> Robot </button>
-		<button id="robot2-btn" onclick="createRobot2()"> Robot 2 </button>
+			
+			
+		
 
 	</body>
 </html>

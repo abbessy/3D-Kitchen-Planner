@@ -81,7 +81,8 @@ function createRobot() {
 	objLoader.setPath('/examples/3d-obj-loader/assets/') ;
 	objLoader.load('r2-d2.obj', function (object) {
 		object.position.x = 500 ;
-		object.traverse( function( o ) {
+		object.position.y = -100 ;
+		object.traverse( ( o )=> {
 
 			if ( o.isMesh ) objects.push( o );
 		
@@ -100,7 +101,9 @@ function createRobot2() {
 		objLoader2.setMaterials(materials);
 		objLoader2.setPath('/examples/3d-obj-loader/assets/') ;
 		objLoader2.load('r2-d2.obj',  (object2) =>{
-			object2.traverse( function( o ) {
+			object2.position.x = 300 ;
+			object2.position.y = -100 ;
+			object2.traverse( ( o ) => {
 
 				if ( o.isMesh ) objects.push( o );
 			
