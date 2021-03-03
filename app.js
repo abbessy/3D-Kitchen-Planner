@@ -81,7 +81,11 @@ function createRobot() {
 	objLoader.setPath('/examples/3d-obj-loader/assets/') ;
 	objLoader.load('r2-d2.obj', function (object) {
 		object.position.x = 500 ;
-		objects.push( object );
+		object.traverse( function( o ) {
+
+			if ( o.isMesh ) objects.push( o );
+		
+		} );
 		scene.add(object);
 }) ; 
 }
@@ -96,7 +100,11 @@ function createRobot2() {
 		objLoader2.setMaterials(materials);
 		objLoader2.setPath('/examples/3d-obj-loader/assets/') ;
 		objLoader2.load('r2-d2.obj',  (object2) =>{
-		objects.push( object2 );
+			object2.traverse( function( o ) {
+
+				if ( o.isMesh ) objects.push( o );
+			
+			} );
 		scene.add(object2);
 		});
 })
@@ -109,9 +117,6 @@ function disableControl(){
 function enableControl(){
 	orbitControls.enabled = true;
 }
-
-
-
 
 
 
