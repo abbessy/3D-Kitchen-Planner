@@ -43,8 +43,6 @@ window.addEventListener('resize', function(){
 }) ;
 
 
-
-
 //animate 
 function animate() {
 	requestAnimationFrame( animate );
@@ -54,25 +52,25 @@ function animate() {
 //cloning
 function createCube () {
 	
-	var geometry = new THREE.BoxGeometry( 200, 200, 200 );
+	var geometry = new THREE.BoxGeometry( 120, 120, 120 );
 	var cube = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x00004B } ) );
 	scene.add( cube );
 	objects.push( cube );
 	cube.position.x = 0;
-	cube.position.y = 0;
+	cube.position.y = -30;
 }
 
 
 
 function createRockCube() {
 	var texture = new THREE.TextureLoader().load( 'rock.jpg' );
-	var rock_geometry = new THREE.BoxGeometry( 200, 200, 200 );
+	var rock_geometry = new THREE.BoxGeometry( 120, 120, 120 );
 	var rock_material = new THREE.MeshBasicMaterial( {map: texture} );
 	var rock_cube = new THREE.Mesh( rock_geometry, rock_material );
 	scene.add( rock_cube );
 	objects.push( rock_cube );
-	rock_cube.position.x = -500;
-	rock_cube.position.y = 0;
+	rock_cube.position.x = -200;
+	rock_cube.position.y = -30;
 }
 
 
