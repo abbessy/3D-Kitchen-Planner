@@ -76,6 +76,22 @@ canvas {
     font-size: 20px;   
     font-family: cursive;
 }
+#remove-btn {
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    height: 60px;  
+    width: 100px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+    font-size: 20px;   
+    font-family: cursive;
+}
+
+
 
 /*menu*/
 
@@ -87,6 +103,7 @@ nav {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
 }
 
 nav ul {
@@ -167,3 +184,4 @@ nav ul .dropdown2:hover ul{
     font-size: 36px;
     color: rgb(66, 64, 40);
 }
+

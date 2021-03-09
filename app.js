@@ -1,5 +1,6 @@
 //variables : 
 var objects = [];
+var cube;
 
 //scene
 var scene = new THREE.Scene();
@@ -30,9 +31,9 @@ scene.add(light);
 
 
 //controls
-
 const orbitControls = new THREE.OrbitControls( camera, renderer.domElement );
 const dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
+
 
 
 //fix the window resize problem 
@@ -43,22 +44,91 @@ window.addEventListener('resize', function(){
 }) ;
 
 
+
 //animate 
 function animate() {
 	requestAnimationFrame( animate );
 	renderer.render(scene, camera);
 };
 
-//cloning
+
+// walls 
+//floor
+var texture = new THREE.TextureLoader().load( 'wood.jpg' );
+const material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide} );
+const geometry = new THREE.PlaneGeometry( 4000, 1500, 320 );
+const floor = new THREE.Mesh( geometry, material );
+scene.add( floor );
+floor.rotation.x = -20.42;
+floor.position.y= -465;
+floor.rotation.y = 0;
+
+//back-wall
+var texture = new THREE.TextureLoader().load( 'rock.jpg' );
+const material2 = new THREE.MeshBasicMaterial( {map: texture} );
+const geometry2 = new THREE.PlaneGeometry( 4000, 1500, 320 );
+const back_wall = new THREE.Mesh( geometry2, material2 );
+scene.add(back_wall ); 
+back_wall.position.z= -750;
+back_wall.position.y= 285.3;
+
+//left-wall
+var texture = new THREE.TextureLoader().load( 'rock.jpg' );
+const material3 = new THREE.MeshBasicMaterial( {map: texture} );
+const geometry3 = new THREE.PlaneGeometry( 1500, 1500, 320 );
+const left_wall = new THREE.Mesh( geometry3, material3 );
+scene.add(left_wall ); 
+left_wall.position.x= -2000;
+left_wall.position.y= 285;
+left_wall.rotation.y = 20.42;
+
+//right-wall
+var texture = new THREE.TextureLoader().load( 'rock.jpg' );
+const material4 = new THREE.MeshBasicMaterial( {map: texture} );
+const geometry4 = new THREE.PlaneGeometry( 1500, 1500, 320 );
+const right_wall = new THREE.Mesh( geometry4, material4 );
+scene.add(right_wall ); 
+right_wall.position.x= 2000;
+right_wall.position.y= 285;
+right_wall.rotation.y = -20.42;
+
+//roof
+var texture = new THREE.TextureLoader().load( 'rock.jpg' );
+const material5 = new THREE.MeshBasicMaterial( {map: texture} );
+const geometry5 = new THREE.PlaneGeometry( 4000, 1500, 320 );
+const roof = new THREE.Mesh( geometry5, material5 );
+scene.add( roof );
+roof.rotation.x = 20.42;
+roof.position.y= 1035;
+roof.rotation.y = 0;
+
+
+
+//create cube  
+var tab = [] ; 
+var i = 0 ; 
 function createCube () {
 	
 	var geometry = new THREE.BoxGeometry( 120, 120, 120 );
-	var cube = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x00004B } ) );
-	scene.add( cube );
-	objects.push( cube );
-	cube.position.x = 0;
-	cube.position.y = -30;
+	cube = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x00004B } ) );
+	tab[i] = cube ; 
+	scene.add(tab[i]) ;
+	objects.push( tab[i] );
+	tab[i].position.x = 0;
+	tab[i].position.y = -30;
+	i = i+1 ;
+;
 }
+
+function removeCube () {
+	
+	tab[i-1].geometry == undefined ;
+	tab[i-1].materials == undefined ;
+	scene.remove(tab[i-1]) ;
+	i= i-1 ; 
+	
+	}
+
 
 
 
@@ -111,6 +181,9 @@ function createRobot2() {
 })
 }
 
+
+
+
 function disableControl(){
 	orbitControls.enabled = false;
 }
@@ -118,6 +191,8 @@ function disableControl(){
 function enableControl(){
 	orbitControls.enabled = true;
 }
+
+
 
 
 
