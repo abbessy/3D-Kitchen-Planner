@@ -3,7 +3,7 @@ function openFunction() {
     document.getElementById("open-btn").style.display="none";
     document.getElementById("dropdown").style.display="initial";
     document.getElementById("dropdown2").style.display="initial";
-    document.getElementById("dropdown3").style.display="initial";
+    document.getElementById("calculer").style.display="initial";
 }
 
 function closeFunction() {
@@ -11,6 +11,5 @@ function closeFunction() {
     document.getElementById("open-btn").style.display="initial";
     document.getElementById("dropdown").style.display="none";
     document.getElementById("dropdown2").style.display="none";
-    document.getElementById("dropdown3").style.display="none";
-    
+    document.getElementById("calculer").style.display="none";
 }

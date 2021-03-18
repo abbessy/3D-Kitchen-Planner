@@ -1,6 +1,7 @@
 body { 
     margin: 0px;
-    background-color: rgb(240, 240, 240);
+    background: url('./sky.png') center;
+    background-size: cover;
 }
 		
 
@@ -8,12 +9,22 @@ canvas {
     width: 100%; 
     height: 100vh ;
     position: absolute;
+    display: block;
 }
 
 /* objects buttons */
 
 #btn-cube  {
     background-color: rgb(0, 0, 75);
+    position: absolute;
+    left: 70px;
+    height: 50px;  
+    width: 100px;
+    cursor: pointer;
+}
+
+#btn-element  {
+    background-color: rgb(1, 40, 3);
     position: absolute;
     left: 70px;
     height: 50px;  
@@ -31,49 +42,6 @@ canvas {
 }
 
 
-#robot-btn  {
-    position: absolute;
-    left: 70px;
-    height: 50px;  
-    width: 100px;
-    cursor: pointer;
-}
-
-#robot2-btn {
-    position: absolute;
-    top: 55%;
-    left: 70px;
-    height: 50px;  
-    width: 100px;
-    cursor: pointer;
-}
-
-#gaz-btn  {
-    position: absolute;
-    left: 70px;
-    height: 50px;  
-    width: 100px;
-    cursor: pointer;
-}
-
-#gaz2-btn {
-    position: absolute;
-    top: 38%;
-    left: 70px;
-    height: 50px;  
-    width: 100px;
-    cursor: pointer;
-}
-
-#gaz3-btn {
-    position: absolute;
-    top: 70%;
-    left: 70px;
-    height: 50px;  
-    width: 100px;
-    cursor: pointer;
-}
-
 #move-btn {
     position: absolute;
     top: 90%;
@@ -82,6 +50,7 @@ canvas {
     width: 100px;
     background-color: Transparent;
     background-repeat:no-repeat;
+    color: rgb(3, 23, 66);
     border: none;
     cursor:pointer;
     overflow: hidden;   
@@ -96,18 +65,19 @@ canvas {
     width: 100px;
     background-color: Transparent;
     background-repeat:no-repeat;
+    color: rgb(3, 23, 66);
     border: none;
     cursor:pointer;
     overflow: hidden;   
     font-size: 20px;   
     font-family: cursive;
 }
-#remove-btn {
+#remove-cube {
     position: absolute;
-    top: 10px;
-    left: 93%;
-    height: 60px;  
-    width: 100px;
+    top: 20px;
+    left: 20%;
+    height: 30px;  
+    width: 150px;
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
@@ -117,12 +87,13 @@ canvas {
     font-family: cursive;
 }
 
+
 #remove-rock-btn {
     position: absolute;
-    top: 100px;
-    left: 93%;
-    height: 60px;  
-    width: 100px;
+    top: 20px;
+    left: 20%;
+    height: 30px;  
+    width: 150px;
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
@@ -134,12 +105,13 @@ canvas {
 
 #calculer {
     position: absolute;
-    top: 200px;
-    left: 93%;
+    top : 90%; 
+    left: 60px;
     height: 60px;  
     width: 100px;
     background-color: Transparent;
     background-repeat:no-repeat;
+    color: rgb(63, 64, 117);
     border: none;
     cursor:pointer;
     overflow: hidden;   
@@ -155,27 +127,26 @@ canvas {
     font-size: 30px;
 }
 
- .close-btn {
+ #close-btn {
     position: absolute;
     top: 10px;
     right: 5px;
     cursor: pointer;
     font-size: 36px;
-    color: rgb(66, 64, 40);
+    color: rgb(0, 33, 54);
 }
 
 
 
 /*menu*/
-
 nav {
     width: 250px;
-    position: absolute;
-    top: 0;
+    position : absolute; 
+    top : 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(67, 74, 99, 0.2);
     border-radius: 10px;
-    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
 }
 
@@ -189,73 +160,90 @@ nav ul li a {
     display: flex;
     align-items: center;
     font-family: cursive;
-    font-size: 20px;
+    font-size: 1.15em;
     text-decoration: none;
-    text-transform: capitalize;
-    color:black;
+    color : rgb(10, 7, 51);
     padding: 10px 30px;
     height: 50px;
-    transition: 0.5s ease;
-    
+    transition: 0.3s ease;
+    border-radius: 10px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover  {
     cursor: pointer;
     color: #fff;
 }
 
-
-nav ul .dropdown:hover ul{
-    display: initial;
-}
-
-
-nav ul .dropdown2:hover ul{
-    display: initial;
-}
-
-nav ul .dropdown3:hover ul{
-    display: initial;
-}
-
-
-
-nav ul .cubes {
+nav ul ul {
     position: absolute;
-    left: 250px;
+    left: 215px;
     width: 200px;
-    top : 0; 
+    top: 0;
     display: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1); 
+    border-radius: 10px;
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.5);
 }
-
-nav ul .robots {
-    position: absolute;
-    left: 250px;
-    width: 200px;
-    top : 80; 
-    display: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.1);
-}
-
-nav ul .gaz {
-    position: absolute;
-    left: 250px;
-    width: 200px;
-    top : 160; 
-    display: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.1);
-}
-
 
 nav ul span {
     position: absolute;
-    right: 20px;
+    left: 185px;
     font-size: 20px;
 }
 
+nav ul .dropdown {
+    position: relative;
+}
+
+nav ul .dropdown:hover > ul {
+    display: initial;
+}
+
+nav ul .dropdown1_1 ul {
+    position: absolute;
+    left: 240px;
+    top: 5px;
+}
+
+nav ul .dropdown1_1:hover ul {
+    display: initial;
+}
+
+nav ul .dropdown1_2 ul {
+    position: absolute;
+    left: 240px;
+    top: 70px;
+}
+
+nav ul .dropdown1_2:hover ul {
+    display: initial;
+}
 
 
+nav ul .dropdown2 {
+    position: relative;
+}
+
+nav ul .dropdown2:hover > ul {
+    display: initial;
+}
+
+nav ul .dropdown2_1 ul {
+    position: absolute;
+    left: 240px;
+    top: 5px;
+}
+
+nav ul .dropdown2_1:hover ul {
+    display: initial;
+}
+
+nav ul .dropdown2_2 ul {
+    position: absolute;
+    left: 240px;
+    top: 70px;
+}
+
+nav ul .dropdown2_2:hover ul {
+    display: initial;
+}

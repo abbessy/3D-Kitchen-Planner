@@ -4,7 +4,7 @@ var cube;
 
 //scene
 var scene = new THREE.Scene();
-scene.background = new THREE.Color( 0xf0f8ff );
+//scene.background = new THREE.Color( 0xf0f8ff );
 
 //camera
 var camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
@@ -13,7 +13,7 @@ camera.position.z = 1000;
 
 
 //renderer
-var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({ alpha : true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
@@ -102,6 +102,15 @@ scene.add(back_wall );
 back_wall.position.z= -750;
 back_wall.position.y= 285.3;
 
+//front-wall
+var texture = new THREE.TextureLoader().load( 'wall.jpg' );
+const material6 = new THREE.MeshBasicMaterial( {map: texture} );
+const geometry6 = new THREE.PlaneGeometry( 3000, 1500, 320 );
+const front_wall = new THREE.Mesh( geometry6, material6 );
+scene.add(front_wall ); 
+front_wall.position.z= 750;
+front_wall.position.y= 285.3;
+front_wall.rotation.x = 21.99;
 
 
 //create cube  
@@ -116,7 +125,7 @@ function createCube () {
 	scene.add(tab[i]) ;
 	objects.push( tab[i] );
 	tab[i].position.x = 0;
-	tab[i].position.y = -30;
+	tab[i].position.y = -289;
 	i = i+1 ;
 	console.log ("i =", i );
 }
@@ -145,7 +154,7 @@ function createRockCube() {
 	scene.add( tab2[j] );
 	objects.push( tab2[j] );
 	tab2[j].position.x = -400;
-	tab2[j].position.y = -30;
+	tab2[j].position.y = -289;
 	j = j + 1 ;
 
 	console.log ("j =", j );
@@ -159,47 +168,65 @@ function removeRockCube () {
 	}
 
 
-	function calculer () {
-		alert ("Your total is : \n" + (i*cube_x*cube_y + j*rock_x*rock_y) ) ; 
+
+//create element
+var tab3 = [] ; 
+var k = 0 ; 
+var element_x = 300; 
+var element_y = 800;
+function createEl () {
+	var element_geometry = new THREE.BoxGeometry( element_x, element_y, 300 );
+	element = new THREE.Mesh( element_geometry, new THREE.MeshLambertMaterial( { color: 0x012803 } ) );
+	tab3[k] = element ; 
+	scene.add(tab3[k]) ;
+	objects.push( tab3[k] );
+	tab3[k].position.x = 400;
+	tab3[k].position.y = -64;
+	k = k+1 ;
+	console.log ("k =", k );
+}
+
+
+function removeEl () {
+	tab3[k-1].geometry == undefined ;
+	tab3[k-1].materials == undefined ;
+	scene.remove(tab3[k-1]) ;
+	k= k-1 ; 
 	}
 
-//robots
-function createRobot() {
-	var objLoader = new THREE.OBJLoader();
-	objLoader.setPath('/examples/3d-obj-loader/assets/') ;
-	objLoader.load('r2-d2.obj', function (object) {
-		object.position.x = 500 ;
-		object.position.y = -100 ;
-		object.traverse( ( o )=> {
+//create wood element
+var tab4 = [];
+var l = 0 ;
+var wood_x= 300 ; 
+var wood_y = 800 ;
+function createWoodEl() {
+	var wood_geometry = new THREE.BoxGeometry( wood_x, wood_y, 300 );
+	var wood_texture = new THREE.TextureLoader().load( 'wood2.jpg' );
+	var wood_material = new THREE.MeshBasicMaterial( {map: wood_texture} );
+	var wood_el = new THREE.Mesh( wood_geometry, wood_material );
+	tab4[l] = wood_el ;
+	scene.add( tab4[l] );
+	objects.push( tab4[l] );
+	tab4[l].position.x = -800;
+	tab4[l].position.y = -64;
+	l = l + 1 ;
 
-			if ( o.isMesh ) objects.push( o );
-		
-		} );
-		scene.add(object);
-}) ; 
+	console.log ("l =", l );
 }
 
-function createRobot2() {
-	var mtlLoader = new THREE.MTLLoader();
-	mtlLoader.setPath('/examples/3d-obj-loader/assets/') ; 
-	mtlLoader.load('r2-d2.mtl',  (materials)=> {
-	materials.preload(); 
-		
-		var objLoader2 = new THREE.OBJLoader();
-		objLoader2.setMaterials(materials);
-		objLoader2.setPath('/examples/3d-obj-loader/assets/') ;
-		objLoader2.load('r2-d2.obj',  (object2) =>{
-			object2.position.x = 300 ;
-			object2.position.y = -100 ;
-			object2.traverse( ( o ) => {
+function removeWoodEl () {
+	tab4[l-1].geometry == undefined ;
+	tab4[l-1].materials == undefined ;
+	scene.remove(tab4[l-1]) ;
+	l= l-1 ; 
+	}
 
-				if ( o.isMesh ) objects.push( o );
-			
-			} );
-		scene.add(object2);
-		});
-})
-}
+
+
+
+
+
+
 
 
 
@@ -213,6 +240,9 @@ function enableControl(){
 }
 
 
+function calculer () {
+	alert ("Your total is : \n" + (i*cube_x*cube_y + j*rock_x*rock_y + k*element_x*element_y + l*wood_x*wood_y) ) ; 
+}
 
 
 

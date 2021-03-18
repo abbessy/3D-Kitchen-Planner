@@ -12,46 +12,55 @@
 		<script  src="./app.js"></script>
 		<script  src="./menu.js"></script>
 		
-		
-		
-		<nav id="menu" >
-			<div id="open-btn" onclick="openFunction()"> &#9776; </div>
-			<a href="#" class="close-btn" onclick="closeFunction()">&times;</a>
-		
-			<ul>
-				<li id="dropdown" class="dropdown"><a href="#">Cubes <span>&rsaquo;</span></a>
-					<ul class="cubes">
-						<li><a href="#"><button id="btn-cube" onclick="createCube()"></button></a>
-						<li><a href="#"><button id="rock-btn"    onclick="createRockCube()" ><img src="./rock.jpg"></button></a>
-					</ul>
-				</li>
+			<nav id="menu">
+				<div id="open-btn" onclick="openFunction()"> &#9776; </div>
+				<a href="#" id="close-btn" onclick="closeFunction()">&times;</a>
 
-				<li id="dropdown2" class="dropdown2"><a href="#">Porte légumes <span>&rsaquo;</span></a>
-					<ul class="robots">
-						<li><a href="#"><button id="robot-btn"   onclick="createRobot()"> Robot </button></a>
-						<li><a href="#"><button id="robot2-btn"  onclick="createRobot2()"> Robot 2 </button></a>
-					</ul>
-				</li>
+				<ul>
+					<li id="dropdown" class="dropdown"><a href="#">Cubes <span>&rsaquo;</span></a>
+						<ul>
+							<li class="dropdown1_1"><a href="#"><button id="btn-cube" onclick="createCube()"></button></button></a>
+								<ul>
+									<li><a href="#"><button id="remove-cube" onclick="removeCube()">Supprimer</button></a></li>
+								</ul>
+							</li>
+							<li class="dropdown1_2"><a href="#"><button id="rock-btn" onclick="createRockCube()" ><img src="./rock.jpg"></button></a>
+								<ul>
+									<li><a href="#"><button id="remove-rock-btn" onclick="removeRockCube()">Supprimer</button></a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
 
-				<li id="dropdown3" class="dropdown3"><a href="#">Gaz<span>&rsaquo;</span></a>
-					<ul class="gaz">
-						<li><a href="#"><button id="gaz-btn"   onclick=""> gaz </button></a>
-						<li><a href="#"><button id="gaz2-btn"  onclick=""> gaz 2 </button></a>
-						<li><a href="#"><button id="gaz3-btn"  onclick=""> gaz 3 </button></a>
-					</ul>
-				</li>
-			</ul>
+
+				<ul>
+					<li id="dropdown2" class="dropdown2"><a href="#">Elements <span>&rsaquo;</span></a>
+						<ul>
+							<li class="dropdown2_1"><a href="#"><button id="btn-element" onclick="createEl()"></button></button></a>
+								<ul>
+									<li><a href="#"><button id="remove-cube" onclick="removeEl()">Supprimer</button></a></li>
+								</ul>
+							</li>
+							<li class="dropdown2_2"><a href="#"><button id="rock-btn" onclick="createWoodEl()" ><img src="./wood2.jpg"></button></a>
+								<ul>
+									<li><a href="#"><button id="remove-rock-btn" onclick="removeWoodEl()">Supprimer</button></a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+
 			
-		</nav>
-
-
-			
+				<button id="calculer"    onclick="calculer()"> calculer </button>
+			</nav>
+		
 			<button id="move-btn"    onclick="disableControl()">move</button>
 			<button id="view-btn"    onclick="enableControl()"> view </button>
-			<button id="remove-btn"    onclick="removeCube()"> supprimer cube </button>
-			<button id="remove-rock-btn"    onclick="removeRockCube()"> supprimer cube2 </button>
-			<button id="calculer"    onclick="calculer()"> calculer </button>
-
+			
+			
 			
 
 	</body>
