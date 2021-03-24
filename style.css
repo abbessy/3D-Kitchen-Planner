@@ -1,6 +1,6 @@
 body { 
     margin: 0px;
-    background: url('./sky.png') center;
+    background: url('./wallpaper.jpg') center;
     background-size: cover;
 }
 		
@@ -46,16 +46,10 @@ canvas {
     position: absolute;
     top: 90%;
     left: 50%;
-    height: 50px;  
-    width: 100px;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    color: rgb(3, 23, 66);
-    border: none;
-    cursor:pointer;
-    overflow: hidden;   
-    font-size: 20px;  
-    font-family: cursive;
+    color: rgb(189, 187, 196);
+    cursor:pointer;  
+    font-size: 40px;  
+    text-decoration: none;
 }
 #view-btn {
     position: absolute;
@@ -65,58 +59,67 @@ canvas {
     width: 100px;
     background-color: Transparent;
     background-repeat:no-repeat;
-    color: rgb(3, 23, 66);
+    color: rgb(189, 187, 196);
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+    font-size: 40px;   
+    font-family: cursive;
+}
+#remove-cube {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    height: 30px;  
+    width: 150px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    color: rgb(223, 223, 223);
     border: none;
     cursor:pointer;
     overflow: hidden;   
     font-size: 20px;   
     font-family: cursive;
 }
-#remove-cube {
-    position: absolute;
-    top: 20px;
-    left: 20%;
-    height: 30px;  
-    width: 150px;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;   
-    font-size: 20px;   
-    font-family: cursive;
+
+#remove-cube:hover {
+    color: rgb(255, 255, 255);
 }
 
 
 #remove-rock-btn {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 20%;
     height: 30px;  
     width: 150px;
     background-color: Transparent;
     background-repeat:no-repeat;
+    color: rgb(223, 223, 223);
     border: none;
     cursor:pointer;
     overflow: hidden;   
     font-size: 20px;   
     font-family: cursive;
 }
+#remove-rock-btn:hover {
+    color: rgb(255, 255, 255);
+}
 
 #calculer {
     position: absolute;
     top : 90%; 
-    left: 60px;
+    left: 100px;
     height: 60px;  
     width: 100px;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    color: rgb(63, 64, 117);
-    border: none;
-    cursor:pointer;
-    overflow: hidden;   
-    font-size: 20px;   
-    font-family: cursive;
+    color: rgb(223, 223, 223);  
+    font-size: 30px;   
+    text-decoration: none;
+
+}
+#calculer:hover  {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
 }
 
 #open-btn {
@@ -125,6 +128,7 @@ canvas {
     top: 12px;
     cursor: pointer;
     font-size: 30px;
+    color: rgb(223, 223, 223);
 }
 
  #close-btn {
@@ -133,7 +137,8 @@ canvas {
     right: 5px;
     cursor: pointer;
     font-size: 36px;
-    color: rgb(0, 33, 54);
+    color: rgb(223, 223, 223);
+    text-decoration: none;
 }
 
 
@@ -144,8 +149,8 @@ nav {
     position : absolute; 
     top : 0;
     bottom: 0;
-    background: rgba(67, 74, 99, 0.2);
     border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
 }
@@ -162,7 +167,7 @@ nav ul li a {
     font-family: cursive;
     font-size: 1.15em;
     text-decoration: none;
-    color : rgb(10, 7, 51);
+    color : rgb(223, 223, 223);
     padding: 10px 30px;
     height: 50px;
     transition: 0.3s ease;
@@ -171,7 +176,7 @@ nav ul li a {
 
 nav ul li a:hover  {
     cursor: pointer;
-    color: #fff;
+    color: rgb(255, 255, 255);
 }
 
 nav ul ul {

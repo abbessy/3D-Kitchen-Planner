@@ -11,22 +11,23 @@
 		<script  src="./MTLLoader.js"></script>
 		<script  src="./app.js"></script>
 		<script  src="./menu.js"></script>
-		
+
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 			<nav id="menu">
 				<div id="open-btn" onclick="openFunction()"> &#9776; </div>
 				<a href="#" id="close-btn" onclick="closeFunction()">&times;</a>
-
+				<p id="demo"></p>
 				<ul>
-					<li id="dropdown" class="dropdown"><a href="#">Cubes <span>&rsaquo;</span></a>
+					<li id="dropdown" class="dropdown"><a href="#">Cubes<span>&rsaquo;</span></a>
 						<ul>
 							<li class="dropdown1_1"><a href="#"><button id="btn-cube" onclick="createCube()"></button></button></a>
 								<ul>
-									<li><a href="#"><button id="remove-cube" onclick="removeCube()">Supprimer</button></a></li>
+									<li><a href="#"><a id="remove-cube" onclick="removeCube()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							<li class="dropdown1_2"><a href="#"><button id="rock-btn" onclick="createRockCube()" ><img src="./rock.jpg"></button></a>
 								<ul>
-									<li><a href="#"><button id="remove-rock-btn" onclick="removeRockCube()">Supprimer</button></a></li>
+									<li><a href="#"><a id="remove-rock-btn" onclick="removeRockCube()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							
@@ -40,12 +41,12 @@
 						<ul>
 							<li class="dropdown2_1"><a href="#"><button id="btn-element" onclick="createEl()"></button></button></a>
 								<ul>
-									<li><a href="#"><button id="remove-cube" onclick="removeEl()">Supprimer</button></a></li>
+									<li><a href="#"><a id="remove-cube" onclick="removeEl()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							<li class="dropdown2_2"><a href="#"><button id="rock-btn" onclick="createWoodEl()" ><img src="./wood2.jpg"></button></a>
 								<ul>
-									<li><a href="#"><button id="remove-rock-btn" onclick="removeWoodEl()">Supprimer</button></a></li>
+									<li><a href="#"><a id="remove-rock-btn" onclick="removeWoodEl()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							
@@ -54,11 +55,11 @@
 				</ul>
 
 			
-				<button id="calculer"    onclick="calculer()"> calculer </button>
+				<a href="#" id="calculer" onclick="calculer()"> <i class="fas fa-calculator"></i> </a>
 			</nav>
-		
-			<button id="move-btn"    onclick="disableControl()">move</button>
-			<button id="view-btn"    onclick="enableControl()"> view </button>
+			
+			<a  href="#" id="move-btn" onclick="moveElement()"> <i class="fas fa-arrows-alt"</i></a>
+			<a  href="#"  id="view-btn" onclick="viewElement()"> <i class="fas fa-eye"></i></a>
 			
 			
 			

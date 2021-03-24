@@ -125,11 +125,12 @@ function createCube () {
 	scene.add(tab[i]) ;
 	objects.push( tab[i] );
 	tab[i].position.x = 0;
-	tab[i].position.y = -289;
+	tab[i].position.y = -288;
 	i = i+1 ;
 	console.log ("i =", i );
 }
 
+	
 
 function removeCube () {
 	tab[i-1].geometry == undefined ;
@@ -210,7 +211,6 @@ function createWoodEl() {
 	tab4[l].position.x = -800;
 	tab4[l].position.y = -64;
 	l = l + 1 ;
-
 	console.log ("l =", l );
 }
 
@@ -221,27 +221,17 @@ function removeWoodEl () {
 	l= l-1 ; 
 	}
 
-
-
-
-
-
-
-
-
-
-
-function disableControl(){
+function moveElement(){
 	orbitControls.enabled = false;
 }
 
-function enableControl(){
+function viewElement(){
 	orbitControls.enabled = true;
 }
 
 
 function calculer () {
-	alert ("Your total is : \n" + (i*cube_x*cube_y + j*rock_x*rock_y + k*element_x*element_y + l*wood_x*wood_y) ) ; 
+	alert("Your total is : \n" + (i*cube_x*cube_y + j*rock_x*rock_y + k*element_x*element_y + l*wood_x*wood_y)/1000 + " dt");
 }
 
 
