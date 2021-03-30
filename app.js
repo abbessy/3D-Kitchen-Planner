@@ -1,3 +1,4 @@
+
 //variables : 
 var objects = [];
 var cube;
@@ -13,7 +14,7 @@ camera.position.z = 1000;
 
 
 //renderer
-var renderer = new THREE.WebGLRenderer({ alpha : true});
+var renderer = new THREE.WebGLRenderer({ antialias : true,alpha : true});
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
@@ -52,13 +53,15 @@ function animate() {
 };
 
 
-// walls 
+// create cuisine 
+
+
+
 //floor
 var texture = new THREE.TextureLoader().load( 'wood.jpg' );
-const material = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide} );
-const geometry = new THREE.PlaneGeometry( 3000, 1500, 320 );
-const floor = new THREE.Mesh( geometry, material );
-scene.add( floor );
+const material1 = new THREE.MeshBasicMaterial( {map: texture, side: THREE.DoubleSide} );
+const geometry1 = new THREE.PlaneGeometry( 3000, 1500, 320 );
+const floor = new THREE.Mesh( geometry1, material1 );
 floor.rotation.x = -20.42;
 floor.position.y= -465;
 floor.rotation.y = 0;
@@ -68,7 +71,6 @@ var texture = new THREE.TextureLoader().load( 'wall.jpg' );
 const material5 = new THREE.MeshBasicMaterial( {map: texture} );
 const geometry5 = new THREE.PlaneGeometry( 3000, 1500, 320 );
 const roof = new THREE.Mesh( geometry5, material5 );
-scene.add( roof );
 roof.rotation.x = 20.42;
 roof.position.y= 1035;
 roof.rotation.y = 0;
@@ -78,7 +80,6 @@ var texture = new THREE.TextureLoader().load( 'wall.jpg' );
 const material3 = new THREE.MeshBasicMaterial( {map: texture} );
 const geometry3 = new THREE.PlaneGeometry( 1500, 1500, 320 );
 const left_wall = new THREE.Mesh( geometry3, material3 );
-scene.add(left_wall ); 
 left_wall.position.x= -1500;
 left_wall.position.y= 285;
 left_wall.rotation.y = 20.42;
@@ -88,7 +89,6 @@ var texture = new THREE.TextureLoader().load( 'wall.jpg' );
 const material4 = new THREE.MeshBasicMaterial( {map: texture} );
 const geometry4 = new THREE.PlaneGeometry( 1500, 1500, 320 );
 const right_wall = new THREE.Mesh( geometry4, material4 );
-scene.add(right_wall ); 
 right_wall.position.x= 1500;
 right_wall.position.y= 285;
 right_wall.rotation.y = -20.42;
@@ -98,7 +98,6 @@ var texture = new THREE.TextureLoader().load( 'wall.jpg' );
 const material2 = new THREE.MeshBasicMaterial( {map: texture} );
 const geometry2 = new THREE.PlaneGeometry( 3000, 1500, 320 );
 const back_wall = new THREE.Mesh( geometry2, material2 );
-scene.add(back_wall ); 
 back_wall.position.z= -750;
 back_wall.position.y= 285.3;
 
@@ -107,38 +106,126 @@ var texture = new THREE.TextureLoader().load( 'wall.jpg' );
 const material6 = new THREE.MeshBasicMaterial( {map: texture} );
 const geometry6 = new THREE.PlaneGeometry( 3000, 1500, 320 );
 const front_wall = new THREE.Mesh( geometry6, material6 );
-scene.add(front_wall ); 
 front_wall.position.z= 750;
 front_wall.position.y= 285.3;
 front_wall.rotation.x = 21.99;
 
 
-//create cube  
+//cuisine2
+
+//floor
+var texture2 = new THREE.TextureLoader().load( 'parterre.jpg' );
+const material12 = new THREE.MeshBasicMaterial( {map: texture2, side: THREE.DoubleSide} );
+const geometry12 = new THREE.PlaneGeometry( 2000, 1500, 320 );
+const floor2 = new THREE.Mesh( geometry12, material12 );
+floor2.rotation.x = -20.42;
+floor2.position.y= -465;
+floor2.rotation.y = 0;
+
+//roof
+var texture2 = new THREE.TextureLoader().load( 'wall2.jpg' );
+const material52 = new THREE.MeshBasicMaterial( {map: texture2} );
+const geometry52 = new THREE.PlaneGeometry( 2000, 1500, 320 );
+const roof2 = new THREE.Mesh( geometry52, material52 );
+roof2.rotation.x = 20.42;
+roof2.position.y= 1035;
+roof2.rotation.y = 0;
+
+//left-wall
+var texture2 = new THREE.TextureLoader().load( 'wall2.jpg' );
+const material32 = new THREE.MeshBasicMaterial( {map: texture2} );
+const geometry32 = new THREE.PlaneGeometry( 1500, 1500, 320 );
+const left_wall2 = new THREE.Mesh( geometry32, material32 ); 
+left_wall2.position.x= -1000;
+left_wall2.position.y= 285;
+left_wall2.rotation.y = 20.42;
+
+//right-wall
+var texture2 = new THREE.TextureLoader().load( 'wall2.jpg' );
+const material42 = new THREE.MeshBasicMaterial( {map: texture2} );
+const geometry42 = new THREE.PlaneGeometry( 1500, 1500, 320 );
+const right_wall2 = new THREE.Mesh( geometry42, material42 ); 
+right_wall2.position.x= 1000;
+right_wall2.position.y= 285;
+right_wall2.rotation.y = -20.42;
+
+//back-wall
+var texture2 = new THREE.TextureLoader().load( 'wall2.jpg' );
+const material22 = new THREE.MeshBasicMaterial( {map: texture2} );
+const geometry22 = new THREE.PlaneGeometry( 2000, 1500, 320 );
+const back_wall2 = new THREE.Mesh( geometry22, material22 );
+back_wall2.position.z= -750;
+back_wall2.position.y= 285.3;
+
+//front-wall
+var texture2 = new THREE.TextureLoader().load( 'wall2.jpg' );
+const material62 = new THREE.MeshBasicMaterial( {map: texture2} );
+const geometry62 = new THREE.PlaneGeometry( 2000, 1500, 320 );
+const front_wall2 = new THREE.Mesh( geometry62, material62 );
+front_wall2.position.z= 750;
+front_wall2.position.y= 285.3;
+front_wall2.rotation.x = 21.99;
+
+
+function createCuisine1() {
+	scene.add(front_wall ); 
+	scene.add(back_wall ); 
+	scene.add(right_wall ); 
+	scene.add(left_wall ); 
+	scene.add( roof ); 
+	scene.add( floor );
+
+	scene.remove(floor2) ;
+	scene.remove(roof2) ;
+	scene.remove(left_wall2) ;
+	scene.remove(right_wall2) ;
+	scene.remove(back_wall2) ;
+	scene.remove(front_wall2 ); 
+}
+
+function createCuisine2() {
+	scene.add(front_wall2 ); 
+	scene.add(back_wall2 ); 
+	scene.add(right_wall2 ); 
+	scene.add(left_wall2 ); 
+	scene.add( roof2 ); 
+	scene.add( floor2 );
+
+	scene.remove(floor) ;
+	scene.remove(roof) ;
+	scene.remove(left_wall) ;
+	scene.remove(right_wall) ;
+	scene.remove(back_wall) ;
+	scene.remove(front_wall ); 
+}
+
+
+//create fridge  
 var tab = [] ; 
 var i = 0 ; 
-var cube_x = 350; 
-var cube_y = 350;
-function createCube () {
-	var geometry = new THREE.BoxGeometry( cube_x, cube_y, 350 );
-	cube = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x00004B } ) );
-	tab[i] = cube ; 
-	scene.add(tab[i]) ;
-	objects.push( tab[i] );
-	tab[i].position.x = 0;
-	tab[i].position.y = -288;
+var fridge_x = 350; 
+var fridge_y = 350;
+function createFridge () {
+	var objLoader = new THREE.OBJLoader();
+		objLoader.setPath('/examples/3d-obj-loader/assets/fridge/') ;
+		objLoader.load('fridge.obj', function (object) {
+			tab[i] = object ;
+			tab[i].position.y = -400 ;
+			tab[i].position.x = -600 ;
+			tab[i].traverse( ( o )=> {
+				if ( o.isMesh ) objects.push( o );
+			});
+			scene.add(tab[i]);
+	}) ; 
 	i = i+1 ;
 	console.log ("i =", i );
 }
 
-	
 
-function removeCube () {
-	tab[i-1].geometry == undefined ;
-	tab[i-1].materials == undefined ;
-	scene.remove(tab[i-1]) ;
+function removeFridge () {
+	scene.remove(tab[i]) ;
 	i= i-1 ; 
 	}
-	
 
 
 //create rock_cube
@@ -161,6 +248,8 @@ function createRockCube() {
 	console.log ("j =", j );
 }
 
+
+
 function removeRockCube () {
 	tab2[j-1].geometry == undefined ;
 	tab2[j-1].materials == undefined ;
@@ -170,28 +259,33 @@ function removeRockCube () {
 
 
 
-//create element
+//create gaz
 var tab3 = [] ; 
 var k = 0 ; 
 var element_x = 300; 
 var element_y = 800;
-function createEl () {
-	var element_geometry = new THREE.BoxGeometry( element_x, element_y, 300 );
-	element = new THREE.Mesh( element_geometry, new THREE.MeshLambertMaterial( { color: 0x012803 } ) );
-	tab3[k] = element ; 
-	scene.add(tab3[k]) ;
-	objects.push( tab3[k] );
-	tab3[k].position.x = 400;
-	tab3[k].position.y = -64;
-	k = k+1 ;
+function createGaz() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/gaz/') ;
+	objLoader.load('gaz.obj', function (object) {
+	tab3[k] = object ;
+	tab3[k].position.x = 500 ;
+	tab3[k].position.y = -300 ;
+	tab3[k].traverse( ( o )=> {
+
+		if ( o.isMesh ) objects.push( o );
+	
+	} );
+	scene.add(tab3[k]);
+}) ; 
+	k = k + 1 ;
 	console.log ("k =", k );
 }
 
 
-function removeEl () {
-	tab3[k-1].geometry == undefined ;
-	tab3[k-1].materials == undefined ;
-	scene.remove(tab3[k-1]) ;
+function removeGaz () {
+	
+	scene.remove(tab3[k]) ;
 	k= k-1 ; 
 	}
 
@@ -220,6 +314,9 @@ function removeWoodEl () {
 	scene.remove(tab4[l-1]) ;
 	l= l-1 ; 
 	}
+	
+
+
 
 function moveElement(){
 	orbitControls.enabled = false;
@@ -231,7 +328,11 @@ function viewElement(){
 
 
 function calculer () {
-	alert("Your total is : \n" + (i*cube_x*cube_y + j*rock_x*rock_y + k*element_x*element_y + l*wood_x*wood_y)/1000 + " dt");
+	
+	alert( "Nombre d'éléments : \n" + (i+j+k+l) + "\n \n \n" +
+		"Total : \n" + (i*fridge_y*fridge_y + j*rock_x*rock_y + k*element_x*element_y + l*wood_x*wood_y)/1000 + " dt " 
+		
+	);
 }
 
 

@@ -14,8 +14,8 @@ canvas {
 
 /* objects buttons */
 
-#btn-cube  {
-    background-color: rgb(0, 0, 75);
+#btn-fridge  {
+    background-color: rgb(255, 255, 255);
     position: absolute;
     left: 70px;
     height: 50px;  
@@ -23,8 +23,8 @@ canvas {
     cursor: pointer;
 }
 
-#btn-element  {
-    background-color: rgb(1, 40, 3);
+#btn-gaz  {
+    background-color: rgb(255, 255, 255);
     position: absolute;
     left: 70px;
     height: 50px;  
@@ -45,7 +45,7 @@ canvas {
 #move-btn {
     position: absolute;
     top: 90%;
-    left: 50%;
+    left: 52%;
     color: rgb(189, 187, 196);
     cursor:pointer;  
     font-size: 40px;  
@@ -60,7 +60,7 @@ canvas {
 #view-btn {
     position: absolute;
     top: 90%;
-    left: 40%;
+    left: 45%;
     height: 50px;  
     width: 100px;
     background-color: Transparent;
@@ -139,7 +139,11 @@ canvas {
     top: 12px;
     cursor: pointer;
     font-size: 30px;
-    color: rgb(223, 223, 223);
+    color: rgb(165, 164, 164);
+}
+
+#open-btn:hover{
+    color: rgb(255, 255, 255);
 }
 
  #close-btn {
@@ -148,10 +152,74 @@ canvas {
     right: 5px;
     cursor: pointer;
     font-size: 36px;
-    color: rgb(223, 223, 223);
+    color: rgb(165, 164, 164);
     text-decoration: none;
 }
 
+#close-btn:hover{
+    color: rgb(255, 255, 255);
+}
+
+#open-btn2 {
+    display: none;
+    position: absolute;
+    top: 12px;
+    right : 0px;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(165, 164, 164);
+}
+
+#open-btn2:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+#close-btn2 {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    cursor: pointer;
+    font-size: 36px;
+    color: rgb(165, 164, 164);
+    text-decoration: none;
+}
+
+#close-btn2:hover{
+    color: rgb(223, 223, 223);
+}
+
+
+#menu-cuisine {
+    position : absolute; 
+    right : 0px ;
+    width: 250px;
+    height: 100vh;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#cuisine1 {
+    position: absolute;
+    top : 10% ;
+    right : 0px ;
+    width: 250px;
+    height: 200px;
+    background: url('./cuisine1.png');
+    cursor: pointer;
+}
+
+#cuisine2 {
+    position: absolute;
+    top : 40% ;
+    right : 0px ;
+    width: 250px;
+    height: 200px;
+    background: url('./cuisine2.png');
+    cursor: pointer;
+}
 
 
 /*menu*/
