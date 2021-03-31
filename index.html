@@ -17,16 +17,28 @@
 				<div id="open-btn" onclick="openFunction()"> &#9776; </div>
 				<a href="#" id="close-btn" onclick="closeFunction()">&times;</a>
 				<ul>
-					<li id="dropdown" class="dropdown"><a href="#">Frigidaires<span>&rsaquo;</span></a>
+					<li id="dropdown" class="dropdown"><a href="#">Réfrigérateurs<span>&rsaquo;</span></a>
 						<ul>
-							<li class="dropdown1_1"><a href="#"><button id="btn-fridge" onclick="createFridge()"></button></button></a>
+							<li class="dropdown1_1"><a href="#" onclick="createFridge()">Front</a>
 								<ul>
-									<li><a href="#"><a id="remove-cube" onclick="removeFridge()">Supprimer</a></a></li>
+									<li><a href="#"><a id="remove-fridge" onclick="removeFridge()">Supprimer</a></a></li>
 								</ul>
 							</li>
-							<li class="dropdown1_2"><a href="#"><button id="rock-btn" onclick="createRockCube()" ><img src="./rock.jpg"></button></a>
+							<li class="dropdown1_2"><a href="#" onclick="createLeftFridge()">Left</a>
 								<ul>
-									<li><a href="#"><a id="remove-rock-btn" onclick="removeRockCube()">Supprimer</a></a></li>
+									<li><a href="#"><a id="remove-left-fridge" onclick="removeLeftFridge()">Supprimer</a></a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown1_3"><a href="#" onclick="createRightFridge()">Right</a>
+								<ul>
+									<li><a href="#"><a id="remove-right-fridge" onclick="removeRightFridge()">Supprimer</a></a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown1_4"><a href="#" onclick="createBackFridge()">Back</a>
+								<ul>
+									<li><a href="#"><a id="remove-back-fridge" onclick="removeBackFridge()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							
@@ -38,14 +50,26 @@
 				<ul>
 					<li id="dropdown2" class="dropdown2"><a href="#">Gazs <span>&rsaquo;</span></a>
 						<ul>
-							<li class="dropdown2_1"><a href="#"><button id="btn-gaz" onclick="createGaz()"></button></a>
+							<li class="dropdown2_1"><a href="#" onclick="createGaz()">Front</a>
 								<ul>
-									<li><a href="#"><a id="remove-cube" onclick="removeGaz()">Supprimer</a></a></li>
+									<li><a href="#"><a id="remove-fridge" onclick="removeGaz()">Supprimer</a></a></li>
 								</ul>
 							</li>
-							<li class="dropdown2_2"><a href="#"><button id="rock-btn" onclick="createWoodEl()" ><img src="./wood2.jpg"></button></a>
+							<li class="dropdown2_2"><a href="#" onclick="createLeftGaz()">Left</a>
 								<ul>
-									<li><a href="#"><a id="remove-rock-btn" onclick="removeWoodEl()">Supprimer</a></a></li>
+									<li><a href="#"><a id="remove-left-fridge" onclick="removeLeftGaz()">Supprimer</a></a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown2_3"><a href="#" onclick="createRightGaz()">Right</a>
+								<ul>
+									<li><a href="#"><a id="remove-left-fridge" onclick="removeRightGaz()">Supprimer</a></a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown2_4"><a href="#" onclick="createBackGaz()">Back</a>
+								<ul>
+									<li><a href="#"><a id="remove-left-fridge" onclick="removeBackGaz()">Supprimer</a></a></li>
 								</ul>
 							</li>
 							
@@ -67,6 +91,9 @@
 			<div id="open-btn2" onclick="openFunction2()"> &#9776; </div>
 			<a href="#" id="close-btn2" onclick="closeFunction2()">&times;</a>
 			</div>
+
+			<button id="rotate-right-fridge" onclick="rotateRightFridge()">rotate right</button>
+			<button id="rotate-left-fridge" onclick="rotateLeftFridge()">rotate left</button>
 
 	</body>
 </html>

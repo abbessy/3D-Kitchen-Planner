@@ -228,92 +228,215 @@ function removeFridge () {
 	}
 
 
-//create rock_cube
+//create Left Fridge
 var tab2 = [];
 var j = 0 ;
 var rock_x= 350 ; 
 var rock_y = 350 ;
-function createRockCube() {
-	var rock_geometry = new THREE.BoxGeometry( rock_y, rock_y, 350 );
-	var texture = new THREE.TextureLoader().load( 'rock.jpg' );
-	var rock_material = new THREE.MeshBasicMaterial( {map: texture} );
-	var rock_cube = new THREE.Mesh( rock_geometry, rock_material );
-	tab2[j] = rock_cube ;
-	scene.add( tab2[j] );
-	objects.push( tab2[j] );
-	tab2[j].position.x = -400;
-	tab2[j].position.y = -289;
-	j = j + 1 ;
-
+function createLeftFridge() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/left-fridge/') ;
+	objLoader.load('left_fridge.obj', function (object) {
+		tab2[j] = object ;
+		tab2[j].position.y = -400 ;
+		tab2[j].position.x = -600 ;
+		tab2[j].traverse( ( o )=> {
+			if ( o.isMesh ) objects.push( o );
+		});
+		scene.add(tab2[j]);
+}) ; 
+		j = j+1 ;
 	console.log ("j =", j );
 }
 
 
 
-function removeRockCube () {
-	tab2[j-1].geometry == undefined ;
-	tab2[j-1].materials == undefined ;
-	scene.remove(tab2[j-1]) ;
+function removeLeftFridge () {
+
+	scene.remove(tab2[j]) ;
 	j= j-1 ; 
 	}
 
 
+//create right Fridge
+var tab3 = [];
+var k = 0 ;
+
+function createRightFridge() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/right-fridge/') ;
+	objLoader.load('right_fridge.obj', function (object) {
+		tab3[k] = object ;
+		tab3[k].position.y = -400 ;
+		tab3[k].position.x = -600 ;
+		tab3[k].traverse( ( o )=> {
+			if ( o.isMesh ) objects.push( o );
+		});
+		scene.add(tab3[k]);
+}) ; 
+		k = k+1 ;
+	console.log ("k =", k );
+}
+
+
+function removeRightFridge () {
+	
+	scene.remove(tab3[k]) ;
+	k = k-1 ; 
+	}
+
+//create back Fridge
+var tab4 = [];
+var l = 0 ;
+
+function createBackFridge() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/back-fridge/') ;
+	objLoader.load('back_fridge.obj', function (object) {
+		tab4[l] = object ;
+		tab4[l].position.y = -400 ;
+		tab4[l].position.x = -600 ;
+		tab4[l].traverse( ( o )=> {
+			if ( o.isMesh ) objects.push( o );
+		});
+		scene.add(tab4[l]);
+}) ; 
+		l = l+1 ;
+	console.log ("l =", l );
+}
+
+function removeBackFridge () {
+	
+	scene.remove(tab4[l]) ;
+	l = l-1 ; 
+	}
+
 
 //create gaz
-var tab3 = [] ; 
-var k = 0 ; 
+var tab5 = [] ; 
+var m = 0 ; 
 var element_x = 300; 
 var element_y = 800;
 function createGaz() {
 	var objLoader = new THREE.OBJLoader();
 	objLoader.setPath('/examples/3d-obj-loader/assets/gaz/') ;
 	objLoader.load('gaz.obj', function (object) {
-	tab3[k] = object ;
-	tab3[k].position.x = 500 ;
-	tab3[k].position.y = -300 ;
-	tab3[k].traverse( ( o )=> {
+	tab5[m] = object ;
+	tab5[m].position.x = 500 ;
+	tab5[m].position.y = -300 ;
+	tab5[m].traverse( ( o )=> {
 
 		if ( o.isMesh ) objects.push( o );
 	
 	} );
-	scene.add(tab3[k]);
+	scene.add(tab5[m]);
 }) ; 
-	k = k + 1 ;
-	console.log ("k =", k );
+	m = m + 1 ;
+	console.log ("m =", m );
 }
 
 
 function removeGaz () {
 	
-	scene.remove(tab3[k]) ;
-	k= k-1 ; 
+	scene.remove(tab5[m]) ;
+	m= m-1 ; 
 	}
 
-//create wood element
-var tab4 = [];
-var l = 0 ;
-var wood_x= 300 ; 
-var wood_y = 800 ;
-function createWoodEl() {
-	var wood_geometry = new THREE.BoxGeometry( wood_x, wood_y, 300 );
-	var wood_texture = new THREE.TextureLoader().load( 'wood2.jpg' );
-	var wood_material = new THREE.MeshBasicMaterial( {map: wood_texture} );
-	var wood_el = new THREE.Mesh( wood_geometry, wood_material );
-	tab4[l] = wood_el ;
-	scene.add( tab4[l] );
-	objects.push( tab4[l] );
-	tab4[l].position.x = -800;
-	tab4[l].position.y = -64;
-	l = l + 1 ;
-	console.log ("l =", l );
+//create left gaz
+var tab6 = [];
+var n = 0 ;
+var left_gaz_x= 300 ; 
+var left_gaz_y = 800 ;
+function createLeftGaz() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/left-gaz/') ;
+	objLoader.load('left_gaz.obj', function (object) {
+	tab6[n] = object ;
+	tab6[n].position.x = 500 ;
+	tab6[n].position.y = -300 ;
+	tab6[n].traverse( ( o )=> {
+
+		if ( o.isMesh ) objects.push( o );
+	
+	} );
+	scene.add(tab6[n]);
+}) ; 
+	n = n + 1 ;
+	console.log ("n =", n );
 }
 
-function removeWoodEl () {
-	tab4[l-1].geometry == undefined ;
-	tab4[l-1].materials == undefined ;
-	scene.remove(tab4[l-1]) ;
-	l= l-1 ; 
-	}
+function removeLeftGaz () {
+
+	scene.remove(tab6[n]) ;
+	n= n-1 ; 
+}
+
+//create right gaz
+var tab7 = [];
+var o = 0 ;
+var right_gaz_x= 300 ; 
+var right_gaz_y = 800 ;
+function createRightGaz() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/right-gaz/') ;
+	objLoader.load('right_gaz.obj', function (object) {
+	tab7[o] = object ;
+	tab7[o].position.x = 500 ;
+	tab7[o].position.y = -300 ;
+	tab7[o].traverse( ( obj )=> {
+
+		if ( obj.isMesh ) objects.push( obj );
+	
+	} );
+	scene.add(tab7[o]);
+}) ; 
+	o = o + 1 ;
+	console.log ("o =", o );
+}
+
+function removeRightGaz () {
+
+	scene.remove(tab7[o]) ;
+	o= o-1 ; 
+}
+
+//create back gaz
+var tab8 = [];
+var p = 0 ;
+var back_gaz_x= 300 ; 
+var back_gaz_y = 800 ;
+function createBackGaz() {
+	var objLoader = new THREE.OBJLoader();
+	objLoader.setPath('/examples/3d-obj-loader/assets/back-gaz/') ;
+	objLoader.load('back_gaz.obj', function (object) {
+	tab8[p] = object ;
+	tab8[p].position.x = 500 ;
+	tab8[p].position.y = -300 ;
+	tab8[p].traverse( ( obj )=> {
+
+		if ( obj.isMesh ) objects.push( obj );
+	
+	} );
+	scene.add(tab8[p]);
+}) ; 
+	p = p + 1 ;
+	console.log ("p =", p );
+}
+
+function removeBackGaz () {
+
+	scene.remove(tab8[p]) ;
+	p= p-1 ; 
+}
+
+
+function rotateRightFridge() {
+	tab[i].rotation.y += 0.1 ;
+}
+
+function rotateLeftFridge() {
+	tab[i].rotation.y -= 0.1 ;
+}
 	
 
 

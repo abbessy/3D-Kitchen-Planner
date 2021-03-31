@@ -77,7 +77,7 @@ canvas {
     color: rgb(255, 255, 255);
 }
 
-#remove-cube {
+#remove-fridge {
     position: absolute;
     top: 10px;
     left: 20%;
@@ -98,7 +98,7 @@ canvas {
 }
 
 
-#remove-rock-btn {
+#remove-left-fridge {
     position: absolute;
     top: 10px;
     left: 20%;
@@ -113,9 +113,50 @@ canvas {
     font-size: 20px;   
     font-family: cursive;
 }
-#remove-rock-btn:hover {
+#remove-left-fridge:hover {
     color: rgb(255, 255, 255);
 }
+
+#remove-right-fridge {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    height: 30px;  
+    width: 150px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    color: rgb(223, 223, 223);
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+    font-size: 20px;   
+    font-family: cursive;
+}
+
+#remove-right-fridge:hover {
+    color: rgb(255, 255, 255);
+}
+
+#remove-back-fridge {
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    height: 30px;  
+    width: 150px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    color: rgb(223, 223, 223);
+    border: none;
+    cursor:pointer;
+    overflow: hidden;   
+    font-size: 20px;   
+    font-family: cursive;
+}
+
+#remove-back-fridge:hover {
+    color: rgb(255, 255, 255);
+}
+
 
 #calculer {
     position: absolute;
@@ -303,6 +344,24 @@ nav ul .dropdown1_2:hover ul {
     display: initial;
 }
 
+nav ul .dropdown1_3 ul {
+    position: absolute;
+    left: 240px;
+    top: 140px;
+}
+nav ul .dropdown1_3:hover ul {
+    display: initial;
+}
+
+nav ul .dropdown1_4 ul {
+    position: absolute;
+    left: 240px;
+    top: 210px;
+}
+nav ul .dropdown1_4:hover ul {
+    display: initial;
+}
+
 
 nav ul .dropdown2 {
     position: relative;
@@ -330,4 +389,34 @@ nav ul .dropdown2_2 ul {
 
 nav ul .dropdown2_2:hover ul {
     display: initial;
+}
+
+nav ul .dropdown2_3 ul {
+    position: absolute;
+    left: 240px;
+    top: 140px;
+}
+
+nav ul .dropdown2_3:hover ul {
+    display: initial;
+}
+
+nav ul .dropdown2_4 ul {
+    position: absolute;
+    left: 240px;
+    top: 210px;
+}
+
+nav ul .dropdown2_4:hover ul {
+    display: initial;
+}
+
+#rotate-right-fridge {
+    position: absolute;
+    left: 500px;
+}
+
+#rotate-left-fridge {
+    position: absolute;
+    left: 400px;
 }
