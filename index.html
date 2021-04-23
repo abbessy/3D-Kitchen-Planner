@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>3D Wave Kitchen Planner</title>
+		<title>Cuisine3D - Planificateur</title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
@@ -14,86 +14,458 @@
 		<script src="./icons.js"></script>
 		
 			<nav id="menu">
-				<div id="open-btn" onclick="openFunction()"> &#9776; </div>
+				<a id="open-btn" onclick="openFunction()"> &#9776; </a>
 				<a href="#" id="close-btn" onclick="closeFunction()">&times;</a>
+				
 				<ul>
-					<li id="dropdown" class="dropdown"><a href="#">Réfrigérateurs<span>&rsaquo;</span></a>
+					<li id="cuisine"><a id="cuisines-btn" href="#">Cuisines</a>
 						<ul>
-							<li class="dropdown1_1"><a href="#" onclick="createFridge()">Front</a>
+							<li><a href="#" onclick="createCuisine1()">Cuisine 1</a>
+								
+							</li>
+
+							<li><a href="#" onclick="createCuisine2()">Cuisine 2</a>
+							
+							</li>
+						</ul>
+					</li>		
+				</ul>
+
+				
+
+		<div class="elements-plus-btn">
+				<a href="#" id="elements-btn" onclick="manageElements()">Éléments</a>
+			<div id="elements"> 
+				
+				<ul>
+					<li id="Réfrigérateur" class="liste"><a href="#">Réfrigérateur<span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
 								<ul>
-									<li><a href="#"><a id="remove-fridge" onclick="removeFridge()">Supprimer</a></a></li>
+									<li class="modele1"><a href="#"><a onclick="createFridge()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeFridge()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createFridgeM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeFridgeM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
-							<li class="dropdown1_2"><a href="#" onclick="createLeftFridge()">Left</a>
+							<li class="left"><a href="#" >Gauche</a>
 								<ul>
-									<li><a href="#"><a id="remove-left-fridge" onclick="removeLeftFridge()">Supprimer</a></a></li>
+									<li class="modele1"><a href="#"><a onclick="createLeftFridge()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftFridge()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftFridgeM2()"id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftFridgeM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 
-							<li class="dropdown1_3"><a href="#" onclick="createRightFridge()">Right</a>
+							<li class="right"><a href="#" >Droite</a>
 								<ul>
-									<li><a href="#"><a id="remove-right-fridge" onclick="removeRightFridge()">Supprimer</a></a></li>
+									<li class="modele1"><a href="#"><a onclick="createRightFridge()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightFridge()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightFridgeM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightFridgeM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 
-							<li class="dropdown1_4"><a href="#" onclick="createBackFridge()">Back</a>
+							<li class="back"><a href="#" >Arrière</a>
 								<ul>
-									<li><a href="#"><a id="remove-back-fridge" onclick="removeBackFridge()">Supprimer</a></a></li>
+									<li class="modele1"><a href="#"><a onclick="createBackFridge()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackFridge()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackFridgeM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackFridgeM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 							
 						</ul>
 					</li>
 				</ul>
-
-
-				<ul>
-					<li id="dropdown2" class="dropdown2"><a href="#">Gazs <span>&rsaquo;</span></a>
-						<ul>
-							<li class="dropdown2_1"><a href="#" onclick="createGaz()">Front</a>
-								<ul>
-									<li><a href="#"><a id="remove-fridge" onclick="removeGaz()">Supprimer</a></a></li>
-								</ul>
-							</li>
-							<li class="dropdown2_2"><a href="#" onclick="createLeftGaz()">Left</a>
-								<ul>
-									<li><a href="#"><a id="remove-left-fridge" onclick="removeLeftGaz()">Supprimer</a></a></li>
-								</ul>
-							</li>
-
-							<li class="dropdown2_3"><a href="#" onclick="createRightGaz()">Right</a>
-								<ul>
-									<li><a href="#"><a id="remove-left-fridge" onclick="removeRightGaz()">Supprimer</a></a></li>
-								</ul>
-							</li>
-
-							<li class="dropdown2_4"><a href="#" onclick="createBackGaz()">Back</a>
-								<ul>
-									<li><a href="#"><a id="remove-left-fridge" onclick="removeBackGaz()">Supprimer</a></a></li>
-								</ul>
-							</li>
-							
-						</ul>
-					</li>
-				</ul>
-
 			
-				<a href="#" id="calculer" onclick="calculer()"> <i class="fas fa-calculator"></i> </a>
+
+				<ul>
+					<li id="Gaz" class="liste"><a href="#">Gaz <span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createGaz()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeGaz()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createGazM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeGazM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="left"><a href="#" >Gauche</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createLeftGaz()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftGaz()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftGazM2()" id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftGazM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="right"><a href="#" >Droite</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createRightGaz()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightGaz()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightGazM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightGazM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="back"><a href="#" >Arrière</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createBackGaz()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackGaz()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackGazM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackGazM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+
+				<ul>
+					<li id="Lavabo" class="liste"><a href="#">Lavabo<span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createSink()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeSink()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createSinkM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeSinkM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="left"><a href="#" >Gauche</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createLeftSink()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftSink()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftSinkM2()" id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftSinkM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="right"><a href="#" >Droite</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createRightSink()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightSink()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightSinkM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightSinkM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="back"><a href="#" >Arrière</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createBackSink()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackSink()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackSinkM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackSinkM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+
+				<ul>
+					<li id="Table" class="liste"><a href="#">Table<span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createTable()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeTable()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createTableM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeTableM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="left"><a href="#" >Gauche</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createLeftTable()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftTable()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftTableM2()" id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftTableM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="right"><a href="#" >Droite</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createRightTable()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightTable()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightTableM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightTableM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="back"><a href="#" >Arrière</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createBackTable()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackTable()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackTableM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackTableM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul>
+					<li id="Porte_Légumes" class="liste"><a href="#">Porte Légumes<span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createPL()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removePL()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createPLM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removePLM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="left"><a href="#" >Gauche</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createLeftPL()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftPL()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftPLM2()" id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftPLM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="right"><a href="#" >Droite</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createRightPL()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightPL()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightPLM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightPLM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="back"><a href="#" >Arrière</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createBackPL()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackPL()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackPLM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackPLM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul>
+					<li id="Éléments_cuisine" class="liste"><a href="#">Éléments cuisine<span>&rsaquo;</span></a>
+						<ul>
+							<li class="front"><a href="#" >En face</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createEC()" id="fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeEC()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createECM2()" id="fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeECM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="left"><a href="#" >Gauche</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createLeftEC()" id="left-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeLeftEC()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createLeftECM2()" id="left-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeLeftECM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="right"><a href="#" >Droite</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createRightEC()" id="right-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeRightEC()"href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createRightECM2()" id="right-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeRightECM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="back"><a href="#" >Arrière</a>
+								<ul>
+									<li class="modele1"><a href="#"><a onclick="createBackEC()" id="back-fridge-M1" >Modèle 1 </a></a>
+										<ul>
+											<li><a onclick="removeBackEC()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+									<li class="modele2"><a href="#"><a onclick="createBackECM2()" id="back-fridge-M2" >Modèle 2 </a></a>
+										<ul>
+											<li><a onclick="removeBackECM2()" href="#">Supprimer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+				
+			
+				
 			</nav>
-			
+			<a href="#" id="calculer" onclick="calculer()"> <i class="fas fa-calculator"></i> </a>
 			<a  href="#" id="move-btn" onclick="moveElement()"> <i class="fas fa-arrows-alt"></i></a>
 			<a  href="#"  id="view-btn" onclick="viewElement()"> <i class="fas fa-eye"></i></a>
 
-			<div id="menu-cuisine">
-			<button   id="cuisine1" onclick="createCuisine1()"> </button>
-			<button   id="cuisine2" onclick="createCuisine2()"> </button>
+			<img src="./logo.png" alt="" id="logo">
+			
 
-			<div id="open-btn2" onclick="openFunction2()"> &#9776; </div>
-			<a href="#" id="close-btn2" onclick="closeFunction2()">&times;</a>
-			</div>
-
+			<!--
 			<button id="rotate-right-fridge" onclick="rotateRightFridge()">rotate right</button>
 			<button id="rotate-left-fridge" onclick="rotateLeftFridge()">rotate left</button>
+			-->
 
+			<div class="popup" id="popup-1">
+				<div class="overlay"></div>
+				<div class="content">
+				  <div class="close-btn" onclick="calculer()">&times;</div>
+				  <h1 class="titre-popup">Tarif</h1>
+				  <p id="demo"></p>
+				</div>
+			  </div>
+
+			  <div class="popup2" id="popup-2">
+				<div class="overlay2"></div>
+				<div class="content2">
+				  <div class="close-btn2" onclick="supprimer()">&times;</div>
+				  <p id="demo2"></p>
+				</div>
+			  </div>
+			   
+	
 	</body>
 </html>

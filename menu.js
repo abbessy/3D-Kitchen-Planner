@@ -1,31 +1,39 @@
 function openFunction() {
     document.getElementById("menu").style.width = "250px" ;
     document.getElementById("open-btn").style.display="none";
-    document.getElementById("dropdown").style.display="initial";
-    document.getElementById("dropdown2").style.display="initial";
-    document.getElementById("calculer").style.display="initial";
+    document.getElementById("close-btn").style.display="initial";
+    document.getElementById("Réfrigérateur").style.display="initial";
+    document.getElementById("Gaz").style.display="initial";
+    document.getElementById("Lavabo").style.display="initial";
+    document.getElementById("Table").style.display="initial";
+    document.getElementById("Porte_Légumes").style.display="initial";
+    document.getElementById("Éléments_cuisine").style.display="initial";
+    document.getElementById("cuisine").style.display="initial";
+    document.getElementById("elements-btn").style.display="initial";
 }
 
 function closeFunction() {
     document.getElementById("menu").style.width = "0px" ;
     document.getElementById("open-btn").style.display="initial";
-    document.getElementById("dropdown").style.display="none";
-    document.getElementById("dropdown2").style.display="none";
-    document.getElementById("calculer").style.display="none";
+    document.getElementById("close-btn").style.display="none";
+    document.getElementById("Réfrigérateur").style.display="none";
+    document.getElementById("Gaz").style.display="none";
+    document.getElementById("Lavabo").style.display="none";
+    document.getElementById("Table").style.display="none";
+    document.getElementById("Porte_Légumes").style.display="none";
+    document.getElementById("Éléments_cuisine").style.display="none";
+    document.getElementById("cuisine").style.display="none";
+    document.getElementById("elements-btn").style.display="none";
+   
 }
 
-function openFunction2() {
-    document.getElementById("menu-cuisine").style.width = "250px" ;
-    document.getElementById("open-btn2").style.display="none";
-    document.getElementById("cuisine1").style.display="initial";
-    document.getElementById("cuisine2").style.display="initial";
-    document.getElementById("close-btn2").style.display="initial";
+function manageElements() {
+    if (document.getElementById("elements").style.display=="initial") {
+    document.getElementById("elements").style.display="none";
+    document.getElementById("elements").style.transition = "0.3s ease" ;
 }
-
-function closeFunction2() {
-    document.getElementById("menu-cuisine").style.width = "0px" ;
-    document.getElementById("open-btn2").style.display="initial";
-    document.getElementById("cuisine1").style.display="none";
-    document.getElementById("cuisine2").style.display="none";
-    document.getElementById("close-btn2").style.display="none";
+    else {
+        document.getElementById("elements").style.display="initial";
+        document.getElementById("elements").style.transition = "0.3s ease" ;
+    }
 }
