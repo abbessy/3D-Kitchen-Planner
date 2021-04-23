@@ -1,0 +1,35 @@
+# Blender MTL File: 'éléments_cuisine.blend'
+# Material Count: 3
+
+newmtl Cupboard_Upper_01_mat
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\abbessy\\Downloads\\Blender models\\éléments de cuisine\\textures\\Cupboard_Upper_01_tex.jpg
+
+newmtl Cupboard_Upper_02_mat
+Ns 225.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\abbessy\\Downloads\\Blender models\\éléments de cuisine\\textures\\Cupboard_Upper_02_tex.jpg
+
+newmtl Handle_mat
+Ns 528.999999
+Ka 0.575000 0.575000 0.575000
+Kd 0.800000 0.800000 0.800000
+Ks 0.416667 0.416667 0.416667
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd C:\\Users\\abbessy\\Downloads\\Blender models\\éléments de cuisine\\textures\\Handle_tex.jpg
