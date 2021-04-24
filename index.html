@@ -437,7 +437,8 @@
 			
 				
 			</nav>
-			<a href="#" id="calculer" onclick="calculer()"> <i class="fas fa-calculator"></i> </a>
+			<a href="#" id="calculer" onclick="calculerTarif()"> <i class="fas fa-calculator"></i> </a>
+			<a href="#" id="prices" onclick="togglePrices()"> <i class="fas fa-receipt"></i> </a>
 			<a  href="#" id="move-btn" onclick="moveElement()"> <i class="fas fa-arrows-alt"></i></a>
 			<a  href="#"  id="view-btn" onclick="viewElement()"> <i class="fas fa-eye"></i></a>
 
@@ -452,17 +453,27 @@
 			<div class="popup" id="popup-1">
 				<div class="overlay"></div>
 				<div class="content">
-				  <div class="close-btn" onclick="calculer()">&times;</div>
+				  <div class="close-button" onclick="calculerTarif()">&times;</div>
 				  <h1 class="titre-popup">Tarif</h1>
 				  <p id="demo"></p>
 				</div>
 			  </div>
 
+
 			  <div class="popup2" id="popup-2">
 				<div class="overlay2"></div>
 				<div class="content2">
-				  <div class="close-btn2" onclick="supprimer()">&times;</div>
+				  <div class="close-button2" onclick="supprimer()">&times;</div>
 				  <p id="demo2"></p>
+				</div>
+			  </div>
+
+			  <div class="popup3" id="popup-3">
+				<div class="overlay3"></div>
+				<div class="content3">
+				  <div class="close-button3" onclick="togglePrices()">&times;</div>
+				  <h1 class="titre-popup3">Prices</h1>
+				  <p id="demo3"></p>
 				</div>
 			  </div>
 			   

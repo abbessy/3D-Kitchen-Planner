@@ -2034,22 +2034,61 @@ function viewElement(){
 }
 
 
-function calculer(){
+function calculerTarif(){
 	document.getElementById("popup-1").classList.toggle("active");
 	document.getElementById("demo").innerHTML =( "<br />" +
-	"Le prix d'un Refrégérateur : ".bold() +((fridge_x*fridge_y*fridge_z)/100000) + "<br />" +
-	"Le prix d'un Refrégérateur modèle 2 : ".bold() +((fridgeM2_x*fridgeM2_y*fridgeM2_z)/100000) + "<br />" +
-	"Le prix d'un gaz : ".bold() +((gaz_x*gaz_y*gaz_z)/100000)+ "<br />" +
-	"Le prix d'un gaz modèle 2 : ".bold() +((gazM2_x*gazM2_y*gazM2_z)/100000)+ "<br />" +
-	"Le prix d'un lavabo : ".bold() +((lavabo_x*lavabo_y*lavabo_z)/100000)+ "<br />" +
-	"Le prix d'un lavabo modèle 2 : ".bold() +((lavaboM2_x*lavaboM2_y*lavaboM2_z)/100000)+ "<br />" +
-	"Le prix d'une table : ".bold() +((table_x*table_y*table_z)/100000)+ "<br />" +
-	"Le prix d'une table modèle 2 : ".bold() +((tableM2_x*tableM2_y*tableM2_z)/100000)+ "<br />" +
-	"Le prix d'une porte légumes : ".bold() +((pl_x*pl_y*pl_z)/100000)+ "<br />" +
-	"Le prix d'une porte légumes modèle 2 : ".bold() +((PLM2_x*PLM2_y*PLM2_z)/100000)+ "<br />" +
-	"Le prix d'un élément de cuisine : ".bold() +((ec_x*ec_y*ec_z)/100000)+ "<br />" +
-	"Le prix d'un élément de cuisine modèle 2 : ".bold() +((ECM2_x*ECM2_y*ECM2_z)/100000)+ "<br />" +"<br />" +
-"Nombre d'éléments :".bold() + (i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+c+d+e+f+g+h+
+	"Refrégérateur ".bold() + " x " +(i+j+k+l) +" = " + ((i*fridge_x*fridge_y*fridge_z)+
+	(j*left_fridge_x*left_fridge_y*left_fridge_z)+(k*right_fridge_x*right_fridge_y*right_fridge_z)+ 
+	(l*back_fridge_x*back_fridge_y*back_fridge_z)
+	)/100000 + "<br />" +
+
+	"Refrégérateur M2 ".bold() + " x " +(i2+j2+k2+l2) +" = " + ((i2*fridgeM2_x*fridgeM2_y*fridgeM2_z) + (j2*left_fridgeM2_x*left_fridgeM2_y*left_fridgeM2_z) +
+	(k2*right_fridgeM2_x*right_fridgeM2_y*right_fridgeM2_z) + (l2*back_fridgeM2_x*back_fridgeM2_y*back_fridgeM2_z)
+	)/100000 + "<br />" +
+
+	"Gaz ".bold() + " x " +(m+n+o+p) +" = " + ((m*gaz_x*gaz_y*gaz_z) + (n*left_gaz_x*left_gaz_y*left_gaz_z) + 
+	(o*right_gaz_x*right_gaz_y*right_gaz_z) + (p*back_gaz_x*back_gaz_y*back_gaz_z)
+	)/100000 + "<br />" +
+
+	"Gaz M2 ".bold() + " x " +(m2+n2+o2+p2) +" = " + ((m2*gazM2_x*gazM2_y*gazM2_z) + (n2*left_gazM2_x*left_gazM2_y*left_gazM2_z) + 
+	(o2*right_gazM2_x*right_gazM2_y*right_gazM2_z) + (p2*back_gazM2_x*back_gazM2_y*back_gazM2_z)
+	)/100000 + "<br />" +
+
+	"Lavabo ".bold() + " x " +(q+r+s+t) +" = " + ((q*lavabo_x*lavabo_y*lavabo_z) + (r*lavabo_left_x*lavabo_left_y*lavabo_left_z) + 
+	(s*lavabo_right_x*lavabo_right_y*lavabo_right_z) + (t*lavabo_back_x*lavabo_back_y*lavabo_back_z)
+	)/100000 + "<br />" +
+
+	"Lavabo M2 ".bold() + " x " +(q2+r2+s2+t2) +" = " + ((q2*lavaboM2_x*lavaboM2_y*lavaboM2_z) + (r2*left_lavaboM2_x*left_lavaboM2_y*left_lavaboM2_z) + 
+	(s2*right_lavaboM2_x*right_lavaboM2_y*right_lavaboM2_z) + (t2*back_lavaboM2_x*back_lavaboM2_y*back_lavaboM2_z)
+	)/100000 + "<br />" +
+
+	"Table ".bold() + " x " +(u+v+w+x) +" = " + ((u*table_x*table_y*table_z) + (v*table_left_x*table_left_y*table_left_z) + 
+	(w*table_right_x*table_right_y*table_right_z) + (x*table_back_x*table_back_y*table_back_z)
+	)/100000 + "<br />" +
+
+	"Table M2 ".bold() + " x " +(u2+v2+w2+x2) +" = " + ((u2*tableM2_x*tableM2_y*tableM2_z) + (v2*left_tableM2_x*left_tableM2_y*left_tableM2_z) + 
+	(w2*right_tableM2_x*right_tableM2_y*right_tableM2_z) + (x2*back_tableM2_x*back_tableM2_y*back_tableM2_z)
+	)/100000 + "<br />" +
+
+	"Porte Légumes ".bold() + " x " +(y+z+c+d) +" = " + ((y*pl_x*pl_y*pl_z) + (z*pl_left_x*pl_left_y*pl_left_z) + 
+	(c*pl_right_x*pl_right_y*pl_right_z) + (d*pl_back_x*pl_back_y*pl_back_z)
+	)/100000 + "<br />" +
+
+	"Porte Légumes M2".bold() + " x " +(y2+z2+c2+d2) +" = " + ((y2*PLM2_x*PLM2_y*PLM2_z) + (z2*left_PLM2_x*left_PLM2_y*left_PLM2_z) + 
+	(c2*right_PLM2_x*right_PLM2_y*right_PLM2_z) + (d2*back_PLM2_x*back_PLM2_y*back_PLM2_z)
+	)/100000 + "<br />" +
+
+	"Élements cuisine ".bold() + " x " +(e+f+g+h) +" = " + ((e*ec_x*ec_y*ec_z) + (f*ec_left_x*ec_left_y*ec_left_z) + 
+	(g*ec_right_x*ec_right_y*ec_right_z) + (h*ec_back_x*ec_back_y*ec_back_z)
+	)/100000 + "<br />" +
+
+	"Élements cuisine M2".bold() + " x " +(e2+f2+g2+h2) +" = " + ((e2*ECM2_x*ECM2_y*ECM2_z) + (f2*left_ECM2_x*left_ECM2_y*left_ECM2_z) + 
+	(g2*right_ECM2_x*right_ECM2_y*right_ECM2_z) + (h2*back_ECM2_x*back_ECM2_y*back_ECM2_z)
+	)/100000 + "<br />" + "<br />" + 
+
+
+	
+"Nombre d'éléments ".bold() + (i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+c+d+e+f+g+h+
 						i2+j2+k2+l2+m2+n2+o2+p2+q2+r2+s2+t2+u2+v2+w2+x2+y2+z2+c2+d2+e2+f2+g2+h2) + "<br />" +
 
 "Total :".bold() + ((i*fridge_x*fridge_y*fridge_z) + (j*left_fridge_x*left_fridge_y*left_fridge_z) + 
@@ -2077,7 +2116,28 @@ function calculer(){
 			(e2*ECM2_x*ECM2_y*ECM2_z) + (f2*left_ECM2_x*left_ECM2_y*left_ECM2_z) + 
 			(g2*right_ECM2_x*right_ECM2_y*right_ECM2_z) + (h2*back_ECM2_x*back_ECM2_y*back_ECM2_z)
 )/100000) ;
-  }
+}
+
+function togglePrices(){
+	document.getElementById("popup-3").classList.toggle("active");
+	document.getElementById("demo3").innerHTML =( "<br />" +
+	"Le prix d'un Refrégérateur : ".bold() +((fridge_x*fridge_y*fridge_z)/100000) + "<br />" +
+	"Le prix d'un Refrégérateur modèle 2 : ".bold() +((fridgeM2_x*fridgeM2_y*fridgeM2_z)/100000) + "<br />" +
+	"Le prix d'un gaz : ".bold() +((gaz_x*gaz_y*gaz_z)/100000)+ "<br />" +
+	"Le prix d'un gaz modèle 2 : ".bold() +((gazM2_x*gazM2_y*gazM2_z)/100000)+ "<br />" +
+	"Le prix d'un lavabo : ".bold() +((lavabo_x*lavabo_y*lavabo_z)/100000)+ "<br />" +
+	"Le prix d'un lavabo modèle 2 : ".bold() +((lavaboM2_x*lavaboM2_y*lavaboM2_z)/100000)+ "<br />" +
+	"Le prix d'une table : ".bold() +((table_x*table_y*table_z)/100000)+ "<br />" +
+	"Le prix d'une table modèle 2 : ".bold() +((tableM2_x*tableM2_y*tableM2_z)/100000)+ "<br />" +
+	"Le prix d'une porte légumes : ".bold() +((pl_x*pl_y*pl_z)/100000)+ "<br />" +
+	"Le prix d'une porte légumes modèle 2 : ".bold() +((PLM2_x*PLM2_y*PLM2_z)/100000)+ "<br />" +
+	"Le prix d'un élément de cuisine : ".bold() +((ec_x*ec_y*ec_z)/100000)+ "<br />" +
+	"Le prix d'un élément de cuisine modèle 2 : ".bold() +((ECM2_x*ECM2_y*ECM2_z)/100000)+ "<br />" +"<br />" 
+) ;
+}
+
+
+
 					
 
 
