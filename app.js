@@ -2088,10 +2088,10 @@ function calculerTarif(){
 
 
 	
-"Nombre d'éléments ".bold() + (i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+c+d+e+f+g+h+
+"Nombre d'éléments : ".bold() + (i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+c+d+e+f+g+h+
 						i2+j2+k2+l2+m2+n2+o2+p2+q2+r2+s2+t2+u2+v2+w2+x2+y2+z2+c2+d2+e2+f2+g2+h2) + "<br />" +
 
-"Total :".bold() + ((i*fridge_x*fridge_y*fridge_z) + (j*left_fridge_x*left_fridge_y*left_fridge_z) + 
+"Total : ".bold() + ((i*fridge_x*fridge_y*fridge_z) + (j*left_fridge_x*left_fridge_y*left_fridge_z) + 
 		   (k*right_fridge_x*right_fridge_y*right_fridge_z) + (l*back_fridge_x*back_fridge_y*back_fridge_z) + 
 		   (m*gaz_x*gaz_y*gaz_z) + (n*left_gaz_x*left_gaz_y*left_gaz_z) + 
 		   (o*right_gaz_x*right_gaz_y*right_gaz_z) + (p*back_gaz_x*back_gaz_y*back_gaz_z) + 
